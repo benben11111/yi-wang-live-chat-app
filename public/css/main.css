@@ -1,0 +1,118 @@
+/*-------------------------------------------
+                general style
+--------------------------------------------*/
+body {
+  background-image: url("/images/chat.jpg");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.chat-room-overlay {
+  position: absolute;
+  width: 100%;
+  height: 715px;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/*-------------------------------------------
+                    side
+--------------------------------------------*/
+
+#side {
+  height: 100vh;
+  /* color: white; */
+  opacity: 0.5;
+  background: #eeeeee;
+  width: 225px;
+  overflow-y: scroll;
+}
+
+/*-------------------------------------------
+                chat window
+--------------------------------------------*/
+
+#chat-area {
+  display: flex;
+}
+
+#chat-window {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+
+}
+
+#chat-messages {
+  flex-grow: 1;
+  padding: 24px 24px 0 24px;
+  overflow-y: scroll;
+}
+
+.send-chat-messages {
+  display: flex;
+  flex-shrink: 0;
+  margin-top: 16px;
+  padding: 24px;
+}
+
+.send-chat-messages form {
+  display: flex;
+  flex-grow: 1;
+  margin-right: 16px;
+}
+
+.send-chat-messages input {
+  border: 1px solid #eeeeee;
+  width: 100%;
+  padding: 12px;
+  margin: 0 16px 0 0;
+  flex-grow: 1;
+}
+
+.send-chat-messages button {
+  font-size: 14px;
+}
+
+/*-------------------------------------------
+                    footer
+--------------------------------------------*/
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/*-------------------------------------------
+                join chat room
+--------------------------------------------*/
+
+#join-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+}
+
+#join-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#join-room-overlay {
+  position: absolute;
+  width: 100%;
+  height: 715px;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
