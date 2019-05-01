@@ -33,12 +33,13 @@ io.on("connection", socket => {
   socket.on("join a chat room", ({
     username,
     chatRoom
-  }) => {
-    const newUser = addNewUser({
-      id: socket.id,
-      username,
-      chatRoom
-    });
+  }, callback) => {
+    const
+      newUser = addNewUser({
+        id: socket.id,
+        username,
+        chatRoom
+      })
 
     // const {
     //   err,
@@ -50,13 +51,10 @@ io.on("connection", socket => {
 
     console.log(newUser);
 
-    // if (err) {
-    //   return callback(err);
-    // }
     // join the chat room
     socket.join(newUser.chatRoom);
-    console.log(newUser.chatRoom);
-    console.log(newUser.username);
+    // console.log(newUser.chatRoom);
+    // console.log(newUser.username);
 
     // send welcome messages and notifying others in the same chat room that a new user has joined 
     socket.emit("message", createMessage(welcomeMessage));
@@ -96,7 +94,7 @@ io.on("connection", socket => {
     const userToBeRemoved = removeUser(socket.id);
 
     if (userToBeRemoved) {
-      io.to(userToBeRemoved.chatRoom).emit("message", createMessage(`${userToBeRemoved} just left the chat room.`));
+      io.to(userToBeRemoved.chatRoom).emit("message", createMessage(`${userToBeRemoved.username} just left the chat room.`));
 
     }
 

@@ -94,4 +94,10 @@ $shareLocationButton.addEventListener("click", () => {
 socket.emit("join a chat room", {
   username,
   chatRoom
+}, err => {
+  if (err) {
+    alert("This username has been taken. Please choose another one.");
+    location.href("/");
+
+  }
 });
